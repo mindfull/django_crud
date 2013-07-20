@@ -60,12 +60,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .writeForm li input { border:1px #ddd solid; padding:4px; width:500px; }
 .writeForm li textarea { border:1px #ddd solid; padding:4px; width:800px; height:300px; }
 
+#pageContent .confirmBox { width:420px; margin:0 auto; padding:20px; border:1px #ec7297 dashed; }
+
 #pageContent .boardButtons { margin-top:30px; }
 #pageContent .boardButtons .left { float:left; }
 #pageContent .boardButtons .right { float:right; }
 
-#pageContent .boardButtons a, #pageContent .boardButtons input { display:inline-block; background:#64a0ca; color:#fff; padding:5px 10px; border-radius:5px; border:none; }
+#pageContent .boardButtons a, #pageContent .boardButtons input { display:inline-block; background:#64a0ca; color:#fff; padding:5px 10px; border-radius:5px; border:none; cursor:pointer }
 #pageContent .boardButtons a:hover, #pageContent .boardButtons input:hover { background:#2a73a6; }
-#pageContent .boardButtons a:active, #pageContent .boardButtons input:active { box-shadow: inset 2px 0px 5px rgba(0,0,0,0.3) }
 
-#pageFooter { margin-top:40px; border-top:1px #ccc solid; padding:20px 0px; color:#666; font-size:0.86em; text-shadow:0px 1px 0px #fff; }
+#pageContent .boardButtons .cancel { background:#bbb; }
+#pageContent .boardButtons .cancel:hover { background:#999; }
+
+#pageContent .boardButtons a:active, #pageContent .boardButtons input:active { box-shadow: inset 0px 2px 5px rgba(0,0,0,0.3) }
+
+#pageFooter { margin-top:40px; border-top:1px #ccc solid; padding:20px 0px; color:#666; font-size:0.86em; background:#fff; }

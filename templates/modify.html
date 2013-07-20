@@ -5,18 +5,19 @@
 {% endblock %}
 
 {% block header %}
-	<h1><a href="/">Board</a> &raquo; Modify</h1>
-	<p>Write a new article.</p>
+	<h1><a href="/">Django 예제 게시판</a> &raquo; Modify</h1>
+	<p>Modify your article.</p>
 {% endblock %}
 
 {% block content %}
 	<div class="content_wrap">
 		<form method="post" action=".">{% csrf_token %}
 			<ul class="writeForm">
-				{{ articleForm.as_ul }}
+				{{ form.as_ul }}
 			</ul>
-			<div class="boardButtons">
+			<div class="boardButtons cboth">
 				<p class="right">
+					<a href="javascript:history.back()" class="cancel">취소</a>
 					<input type="submit" value="저장" />
 				</p>
 			</div>

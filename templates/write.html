@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-	<h1><a href="/">Board</a> &raquo; Write</h1>
+	<h1><a href="/">Django 예제 게시판</a> &raquo; Write</h1>
 	<p>Write a new article.</p>
 {% endblock %}
 
@@ -15,8 +15,9 @@
 			<ul class="writeForm">
 				{{ form.as_ul }}
 			</ul>
-			<div class="boardButtons">
+			<div class="boardButtons cboth">
 				<p class="right">
+					<a href="javascript:history.back()" class="cancel">취소</a>
 					<input type="submit" value="저장" />
 				</p>
 			</div>

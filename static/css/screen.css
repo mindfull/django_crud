@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+body { font: 14px "Helvetica Neue","Apple SD Gothic Neo","나눔고딕","맑은 고딕",Helvetica, Arial, sans-serif; text-align:left; margin:0; padding:0; line-height:1.5; color:#444; background:#f0f0f0; }
+input, textarea, button { font: 14px "Helvetica Neue","Apple SD Gothic Neo","나눔고딕","맑은 고딕",Helvetica, Arial, sans-serif; text-align:left; margin:0; padding:0; line-height:1.5; color:#444; }
+
+a:link { color:#64a0ca; text-decoration:none; }
+a:visited { color:#64a0ca; text-decoration:none; }
+a:hover { color:#2a73a6; text-decoration:none; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+.cboth, .content_wrap { zoom:1; }
+.cboth:after, .content_wrap:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+
+.content_wrap { width:960px; margin:0 auto; }
+
+#pageHeader { padding:80px; background:#2484a8; margin-bottom:40px; border-bottom:2px #ccc solid; }
+#pageHeader h1 { font-size:3em; font-weight:100; color:#fff; text-shadow:0px 1px 0px rgba(0,0,0,0.5) }
+#pageHeader p { font-size:1.18em; font-weight:bold; color:#fff; text-shadow:0px 1px 0px rgba(0,0,0,0.5) }
+#pageHeader a { color:#fff; border-bottom:1px rgba(255,255,255,0.7) dotted; }
+#pageHeader a:hover { color:#fff; border-bottom:1px rgba(255,255,255,1) solid; }
+
+#boardList { width:100%; border-spacing: 0; border-collapse: collapse; margin-bottom:30px; text-shadow:0px 1px 0px #fff; }
+#boardList th, #boardList td { padding:15px 0 15px 10px; border-bottom:1px #ccc solid; text-align:left; }
+
+#boardList td { color:#666; font-size:0.86em;}
+
+#boardList thead th { background:#fff; border-top:2px #ccc solid; }
+#boardList thead th.no { width:70px; }
+#boardList thead th.author { width:100px; }
+#boardList thead th.date { width:100px; }
+#boardList thead th.read { width:70px; }
+
+#boardList tbody tr { cursor:pointer; }
+#boardList tbody tr:hover td, #boardList tbody tr:hover th { background:#f6f6f6; }
+
+#pageContent h2 { font-size:2.5em; font-weight:200; text-shadow:0px 2px 0px #fff; margin-bottom:10px; }
+#pageContent p.articleDesc { font-size:0.86em; color:#666; margin-bottom:30px; }
+#pageContent p.articleDesc sup { font-size:0.5em; font-weight:bold; margin:0 5px; }
+
+#pageContent div.article { border-top:1px #ddd solid; border-bottom:1px #ddd solid; padding:20px 0; }
+#pageContent div.comments { background: #eaeaea; padding:20px; }
+
+.writeForm { list-style:none; }
+.writeForm li { padding:15px 0; border-bottom:1px #ccc solid; }
+.writeForm li label { display:block; float:left; color:#888; font-weight:bold; font-size:0.86em; margin-right:30px; letter-spacing: 3px; padding-top:6px; }
+.writeForm li input { border:1px #ddd solid; padding:4px; width:500px; }
+.writeForm li textarea { border:1px #ddd solid; padding:4px; width:800px; height:300px; }
+
+#pageContent .boardButtons { margin-top:30px; }
+#pageContent .boardButtons .left { float:left; }
+#pageContent .boardButtons .right { float:right; }
+
+#pageContent .boardButtons a, #pageContent .boardButtons input { display:inline-block; background:#64a0ca; color:#fff; padding:5px 10px; border-radius:5px; border:none; }
+#pageContent .boardButtons a:hover, #pageContent .boardButtons input:hover { background:#2a73a6; }
+#pageContent .boardButtons a:active, #pageContent .boardButtons input:active { box-shadow: inset 2px 0px 5px rgba(0,0,0,0.3) }
+
+#pageFooter { margin-top:40px; border-top:1px #ccc solid; padding:20px 0px; color:#666; font-size:0.86em; text-shadow:0px 1px 0px #fff; }

@@ -5,15 +5,21 @@
 {% endblock %}
 
 {% block header %}
-	<h1>Board &raquo; Write</h1>
+	<h1><a href="/">Board</a> &raquo; Write</h1>
 	<p>Write a new article.</p>
 {% endblock %}
 
 {% block content %}
 	<div class="content_wrap">
 		<form method="post" action=".">{% csrf_token %}
-			{{ articleForm.as_p }}
-			<input type="submit" value="저장" />
+			<ul class="writeForm">
+				{{ form.as_ul }}
+			</ul>
+			<div class="boardButtons">
+				<p class="right">
+					<input type="submit" value="저장" />
+				</p>
+			</div>
 		</form>
 	</div>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-	<h1>Board &raquo; List</h1>
+	<h1><a href="/">Board</a> &raquo; List</h1>
 	<p>See the article list.</p>
 {% endblock %}
 
@@ -15,11 +15,11 @@
 			<table id="boardList">
 				<thead>
 					<tr>
-						<th scope="col"></th>
-						<th scope="col">Title</th>
-						<th scope="col">Author</th>
-						<th scope="col">Written in</th>
-						<th scope="col">Read</th>
+						<th scope="col" class="no"></th>
+						<th scope="col" class="title">Title</th>
+						<th scope="col" class="author">Author</th>
+						<th scope="col" class="date">Written in</th>
+						<th scope="col" class="read">Read</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -28,15 +28,15 @@
 							<td>{{ article.id }}</td>
 							<th scope="row"><a href="/View/{{ article.id }}">{{ article.title }}</a> ({{ article.comments }})</th>
 							<td>{{ article.user.username }}</td>
-							<td>{{ article.written }}</td>
+							<td>{{ article.written | date:"Y/m/d" }}</td>
 							<td>{{ article.readcount }}</td>
 						</tr>
 					{% endfor %}
 				</tbody>
 			</table>
 		{% endif %}
-		<p class="boardButtons">
-			<a href="/Write/">Write</a>
-		</p>
+		<div class="boardButtons">
+			<p class="right"><a href="/Write/">Write</a></p>
+		</div>
 	</div>
 {% endblock %}

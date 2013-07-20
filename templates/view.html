@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-	<h1><a href="/">Board</a> &raquo; View</h1>
+	<h1><a href="/">Django 예제 게시판</a> &raquo; View</h1>
 	<p>Read the article.</p>
 {% endblock %}
 
@@ -15,11 +15,11 @@
 		<h2>{{ article.title }}</h2>
 			<p class="articleDesc">
 				<strong>{{ article.user.username }}</strong>
-				<sup>|</sup> Written in {{ article.written }}
+				<sup>|</sup> Written at {{ article.written }}
 				{% if article.modified %}
-					<sup>|</sup> {{ article.modified }}
+					<sup>|</sup> Last Modified at {{ article.modified }}
 				{% endif %}
-				<sup>|</sup> {{ article.readcount }}
+				<sup>|</sup> {{ article.readcount }} Views
 			</p>
 		</header>
 		<article>
@@ -39,7 +39,7 @@
 				</p>
 				<p class="right">
 					<a href="/Modify/{{ article.id }}">Modify</a>
-					<a href="/Delete/{{ article.id }}">Remove</a>
+					<a href="/Delete/{{ article.id }}" id="removeButton">Remove</a>
 				</p>
 			</div>
 		</footer>

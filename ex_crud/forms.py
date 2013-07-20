@@ -9,6 +9,7 @@ class Article(models.Model):
 	title = forms.TextInput(attrs={'size': 64})
 	text = forms.Textarea
 	written = forms.HiddenInput
+	modified = forms.HiddenInput
 	
 	# On Python 3: def __str__(self):
 	def __unicode__(self):

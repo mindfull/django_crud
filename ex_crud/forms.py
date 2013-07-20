@@ -1,16 +1,21 @@
 #coding=utf8
 from django import forms
+from django.core.urlresolvers import reverse
+from django.db import models
 
-class ArticleWriteForm(forms.Form):
-	title = forms.CharField(
-		label="제목",
-		widget = forms.TextInput(attrs={'size': 64})
-	)
-	text = forms.CharField(
-		label="내용",
-		widget = forms.Textarea
-	)
-	user = forms.IntegerField(
-		label="글쓴이",
-		widget = forms.HiddenInput(attrs={'value': 1})
-	)
+from .models import T_article
+
+class Article(models.Model):
+	title = forms.TextInput(attrs={'size': 64})
+	text = forms.Textarea
+	written = forms.HiddenInput
+	modified = forms.HiddenInput
+	
+	# On Python 3: def __str__(self):
+	def __unicode__(self):
+		return self.name
+
+class ArticleWriteForm(forms.ModelForm):
+	class Meta:
+		model = T_article
+		fields = ['title', 'text']

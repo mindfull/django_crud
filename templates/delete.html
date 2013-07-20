@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block title %}
+	{{ page_title }}
+{% endblock %}
+
+{% block header %}
+	<h1><a href="/">Django 예제 게시판</a> &raquo; Delete</h1>
+	<p>Delete your article.</p>
+{% endblock %}
+
+{% block content %}
+	<div class="content_wrap">
+		<form method="post" action=".">{% csrf_token %}
+			<div class="confirmBox">
+				<p class="confirmMessage">
+					정말 삭제하시겠습니까?
+				</p>
+				<div class="boardButtons cboth">
+					<p class="right">
+						<a href="javascript:history.back()" class="cancel">취소</a>
+						<input type="submit" value="삭제" />
+					</p>
+				</div>
+			</div>
+		</form>
+	</div>
+{% endblock %}

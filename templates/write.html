@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block title %}
+	{{ page_title }}
+{% endblock %}
+
+{% block header %}
+	<h1>Board &raquo; Write</h1>
+	<p>Write a new article.</p>
+{% endblock %}
+
+{% block content %}
+	<div class="content_wrap">
+		<form method="post" action=".">{% csrf_token %}
+			{{ articleForm.as_p }}
+			<input type="submit" value="저장" />
+		</form>
+	</div>
+{% endblock %}

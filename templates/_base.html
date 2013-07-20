@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			{% block title %}{% endblock %} :: The First Project
+		</title>
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/screen.css" media="screen" />
+	</head>
+	<body>
+		<header id="pageHeader">
+			<div id="siteHead">
+				<div class="content_wrap">
+				{% block header %}
+				{% endblock %}
+				</div>
+			</div>
+		</header>
+		<section>
+			{% block content %}
+			{% endblock %}
+		</section>
+		<footer id="pageFooter">
+			<div class="content_wrap">
+				<p class="primary">&copy; 2013 mindFULL</p>
+				<p class="secondary">Powered by django</p>
+			</div>
+		</footer>
+		{% block scripts %}
+			<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.0.3.min.js"></script>
+			<script type="text/javascript" src="{{ STATIC_URL }}js/layout.js"></script>
+		{% endblock %}
+		{% block add_scripts %}
+		{% endblock %}
+	</body>
+</html>

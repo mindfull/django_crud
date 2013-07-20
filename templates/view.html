@@ -14,7 +14,7 @@
 		<header>
 		<h2>{{ article.title }}</h2>
 			<p class="articleDesc">
-				<strong>{{ article.user.username }}</strong>
+				<strong>{{ article.user.username }}</strong> ({{ article.user.email }})
 				<sup>|</sup> Written at {{ article.written }}
 				{% if article.modified %}
 					<sup>|</sup> Last Modified at {{ article.modified }}

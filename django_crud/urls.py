@@ -11,7 +11,7 @@ urlpatterns = patterns('',
 	url(r'^Write/$', views.ArticleCreateView.as_view(), name='article_create'),
 	url(r'^Modify/(?P<id>\d+)/$', views.ArticleUpdateView.as_view(), name='article_update'),
 	#(r'^Modify/(\d)/$', Modify),
-	(r'^View/(\d)/$', View),
+	(r'^View/(\d+)/$', View),
 	(r'^Login/$', 'django.contrib.auth.views.login'),
 	url(r'^Delete/(?P<id>\d+)/$', views.ArticleDeleteView.as_view(), name='article_delete')
 )

@@ -5,20 +5,43 @@
 {% endblock %}
 
 {% block header %}
-	<h1>Board &raquo; View</h1>
+	<h1><a href="/">Board</a> &raquo; View</h1>
 	<p>Read the article.</p>
 {% endblock %}
 
 {% block content %}
 	<div class="content_wrap">
+		<header>
 		<h2>{{ article.title }}</h2>
-		<p class="articleDesc">
-			<strong>{{ article.user.username }}</strong>
-			| Written in {{ article.written }}
-			{% if article.modified %}
-				| {{ article.modified }}
-			{% endif %}
-			| {{ article.readcount }}
-		</p>
+			<p class="articleDesc">
+				<strong>{{ article.user.username }}</strong>
+				<sup>|</sup> Written in {{ article.written }}
+				{% if article.modified %}
+					<sup>|</sup> {{ article.modified }}
+				{% endif %}
+				<sup>|</sup> {{ article.readcount }}
+			</p>
+		</header>
+		<article>
+			<div class="article">
+				{{ article.text | linebreaks}}
+			</div>
+		</article>
+		<section>
+			<div class="comments">
+				comments
+			</div>
+		</section>
+		<footer>
+			<div class="boardButtons cboth">
+				<p class="left">
+					<a href="/">List</a>
+				</p>
+				<p class="right">
+					<a href="/Modify/{{ article.id }}">Modify</a>
+					<a href="/Delete/{{ article.id }}">Remove</a>
+				</p>
+			</div>
+		</footer>
 	</div>
 {% endblock %}

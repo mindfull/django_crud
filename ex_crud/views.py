@@ -17,16 +17,19 @@ import datetime
 from .models import T_article, T_comment
 import time
 
-ITEMS_PER_PAGE = 10
-
 def __init__(self, *args, **kwargs):
 	super(ex_crud, self).__init__(*args, **kwargs)
 	self.fields['title'].label = "제목"
 	self.fields['text'].label = "내용"
 
 def List(request):
+	if request.GET.get('per_page'):
+		request.session['per_page'] = int(request.GET.get('per_page'))
+	
+	per_page = request.session.get('per_page', 10)
+	
 	query_set = T_article.objects.order_by('-id')
-	paginator = Paginator(query_set, ITEMS_PER_PAGE)
+	paginator = Paginator(query_set, per_page)
 	
 	try:
 		page = int(request.GET.get('page', '1'))

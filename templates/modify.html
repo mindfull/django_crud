@@ -11,7 +11,7 @@
 
 {% block content %}
 	<div class="content_wrap">
-		<form method="post" action=".">{% csrf_token %}
+		<form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
 			<ul class="writeForm">
 				{{ form.as_ul }}
 			</ul>

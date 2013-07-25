@@ -23,6 +23,16 @@
 			</p>
 		</header>
 		<article>
+			{% if article.file1 or article.file2 %}
+			<ul class="files">
+				{% if article.file1 %}
+					<li><strong>File 1</strong> <a href="{{ article.file1.url }}">{{ article.file1 }}</a></li>
+				{% endif %}
+				{% if article.file2 %}
+					<li><strong>File 2</strong> <a href="{{ article.file2.url }}">{{ article.file2 }}</a></li>
+				{% endif %}
+			</ul>
+			{% endif %}
 			<div class="article">
 				{{ article.text | linebreaks}}
 			</div>

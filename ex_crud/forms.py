@@ -10,6 +10,8 @@ class Article(models.Model):
 	text = forms.Textarea
 	written = forms.HiddenInput
 	modified = forms.HiddenInput
+	file1 = forms.FileInput
+	file2 = forms.FileInput
 	
 	# On Python 3: def __str__(self):
 	def __unicode__(self):
@@ -18,4 +20,4 @@ class Article(models.Model):
 class ArticleWriteForm(forms.ModelForm):
 	class Meta:
 		model = T_article
-		fields = ['title', 'text']
+		fields = ['title', 'text', 'file1', 'file2']

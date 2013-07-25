@@ -34,17 +34,37 @@
 					{% endfor %}
 				</tbody>
 			</table>
-			<p class="paging">
-				{% if articles.has_previous %}
-					<a href="?page={{ articles.previous_page_number }}" class="icon-left"> 
-						Previous
-					</a> |
+			<div class="pagingWrapper cboth">
+				<p class="paging">
+					{% if articles.has_previous %}
+						<a href="?page={{ articles.previous_page_number }}" class="icon-left"> 
+							Previous
+						</a> |
+						{% endif %}
+						<span>Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
+						{% if articles.has_next %} |
+						<a href="?page={{ articles.next_page_number }}">Next</a>
 					{% endif %}
-					<span>Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
-					{% if articles.has_next %} |
-					<a href="?page={{ articles.next_page_number }}">Next</a>
-				{% endif %}
-			</p>
+				</p>
+				<select class="pagingConf" ONCHANGE="location = this.options[this.selectedIndex].value;">
+					<option value="/?per_page=5" 
+						{% if request.session.per_page == 5 %}selected{% endif %}>
+						Show 5 Articles
+					</option>
+					<option value="/?per_page=10" 
+						{% if request.session.per_page == 10 %}selected{% endif %}>
+						Show 10 Articles
+					</option>
+					<option value="/?per_page=15" 
+						{% if request.session.per_page == 15 %}selected{% endif %}>
+						Show 15 Articles
+					</option>
+					<option value="/?per_page=20"
+						{% if request.session.per_page == 20 %}selected{% endif %}>
+						Show 20 Articles
+					</option>
+				</select>
+			</div>
 		{% endif %}
 		<div class="boardButtons">
 			<p class="right"><a href="/Write/">Write</a></p>

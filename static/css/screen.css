@@ -60,6 +60,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .writeForm li input { border:1px #ddd solid; padding:4px; width:500px; }
 .writeForm li textarea { border:1px #ddd solid; padding:4px; width:800px; height:300px; }
 
+.pagingWrapper .paging { float:left; }
+.pagingWrapper .pagingConf { float:right; height:20px; }
+
 #pageContent .confirmBox { width:420px; margin:0 auto; padding:20px; border:1px #ec7297 dashed; }
 
 #pageContent .boardButtons { margin-top:30px; }
